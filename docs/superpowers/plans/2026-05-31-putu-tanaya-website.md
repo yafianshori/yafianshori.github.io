@@ -138,7 +138,7 @@ Then the CTA row (primary `Kerja Sama` pill + secondary `[LinkedIn]` mono link w
 - `CEO` — caption "STARTUP BELUMNEMU"
 - `Top 5` — caption ID "MAWAPRES UISI 2019" / EN "TOP STUDENT UISI 2019"
 
-Add all new strings to `I18N`. Give metric numbers `data-countup` where numeric (`13`) and leave non-numeric (`CEO`, `Top 5`) as static text. Mark hero metric labels with `data-i18n`.
+Add all new strings to `I18N`. Give metric numbers `data-countup` where numeric (`13`). The non-numeric proofs (`CEO`, `Top 5`) are static text but get a soft fade-in via the `.reveal` class when scrolled into view (matches spec §7 intent without faking a count-up); under `prefers-reduced-motion` they simply appear. Mark hero metric labels with `data-i18n`.
 
 - [ ] **Step 2: Add count-up module**
 
