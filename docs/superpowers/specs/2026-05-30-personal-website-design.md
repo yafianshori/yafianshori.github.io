@@ -21,6 +21,12 @@ Primary goal: convince a visitor — within the first 3 seconds ("golden time") 
 - Scrum Master & BA presented as **practical experience** (no certification claims — honest).
 - Entire site framed as **ROI / investment**: paying Yafi returns more than it costs.
 
+### Rate-justification selling points (user-selected)
+1. **ROI / business-results focus** — primary. Frame the engagement as investment that pays back; numbers lead. This is the strongest premium-rate justification.
+2. **Clear working process** — show a structured Discovery → Analyze → Facilitate (Sprint) → Build → Deliver flow (Section 03). Clients pay premium for certainty, not surprises.
+3. **Selective / exclusive positioning** — a quiet signal that Yafi takes limited, high-impact projects (e.g. a single restrained line near the contact CTA: "Menerima proyek terbatas — fokus pada dampak."). Keep subtle, no hype.
+- NOT included: testimonials (none verified yet).
+
 ## 3. Verified Facts & Proof (content source of truth)
 
 All claims below are backed by national media / third-party validation. Do not invent beyond these.
@@ -29,7 +35,8 @@ All claims below are backed by national media / third-party validation. Do not i
 - Yafi Anshori, S.Tr.Kom — Politeknik Negeri Jember (Polije).
 - Business Analyst at PT Petrokimia Gresik (BUMN, agro-industry).
 - Self-described: perfectionist, fast learner, hard worker.
-- GitHub: `yafianshori`. LinkedIn: `in/yafianshori`. Email: bangapli.sc@gmail.com (confirm before publishing).
+- GitHub: `yafianshori`. LinkedIn: `in/yafianshori`. Email: bangapli.sc@gmail.com.
+- **BLOCKING pre-launch item:** confirm the email address to wire into mailto + footer before publishing.
 
 ### Background / journey
 - Microsoft Student Partner (MSP) — trainer & speaker.
@@ -51,9 +58,15 @@ All claims below are backed by national media / third-party validation. Do not i
   - Ecosystem won "Warehouse & Bagging Transformation for Supply Chain Excellence" — BILA 2025. Total warehouse efficiency Rp 14,8 billion.
 
 ### Hero metrics (animated count-up)
-- `Rp 14,8 M+` efficiency delivered.
-- `5+` apps that won TKMPN / national recognition.
-- `5,4 jt ton/thn` fertilizer managed by systems he built.
+Honest attribution: these are outcomes of systems Yafi helped build/bring as part of a team at Petrokimia. Framing must credit "systems he built/led", not personal solo accolades.
+- `Rp 14,8 M+` efisiensi gudang dari sistem yang ia bangun/bawa (ecosystem figure — frame as "systems built", not personal).
+- `4` produk award-winning yang ia bawa (SISTRO, DTMS, 2CE, EXCELLO).
+- `5,4 jt ton/thn` pupuk dikelola oleh sistem yang ia bangun.
+
+### Award attribution guardrail (apply consistently)
+- **All third-party awards are product/team/company awards, NOT personal accolades.** This applies to: TKMPN (SISTRO), Hannover Messe 2023 (SISTRO), ILA 2024 (2CE/warehouse operation), BILA 2023/2025 (ecosystem). On product cards, badges describe the PRODUCT's recognition; Yafi's role is "yang membawa/membangun" (brought/built it), never "I won X".
+- DTMS Rp 12,9 M/year is **potensi penghematan (projected)** — must keep the "potensi/projected" qualifier everywhere it appears, including Impact strip.
+- Number formatting stays ID-style (`Rp 14,8 M`, `1.361`, `5,4`) in BOTH languages; only surrounding labels translate.
 
 ### Tech & skills
 - BA & Agile/Scrum practice.
@@ -74,13 +87,13 @@ All claims below are backed by national media / third-party validation. Do not i
 
 Golden-time first, then proof. Few words, numbers do the talking.
 
-- **Hero:** name + one sharp sentence + 3 role chips (BA · Scrum Master · Builder) + 3 count-up metrics + CTA [Hire Saya] / [LinkedIn] + ID/EN toggle + animated background.
+- **Hero:** name + one sharp sentence + 3 role chips (BA · Scrum Master · Builder) + 3 count-up metrics + primary CTA (ID "Hubungi Saya" / EN "Hire Me") + secondary [LinkedIn] (intentionally only LinkedIn in hero; full channels in footer) + ID/EN toggle + animated background. Consistent CTA label everywhere: ID "Hubungi Saya" / EN "Hire Me".
 - **01 — Impact:** strip of rupiah/outcome numbers, one context line each. ROI hero.
 - **02 — Karya/Produk:** cards for SISTRO / DTMS / 2CE / EXCELLO. Each: name, one-line function, proof badges (TKMPN, Hannover Messe→on product, Rp/yr). Hover reveals detail.
-- **03 — Cara Saya Bekerja:** Discovery → Analyze → Facilitate (Sprint) → Build → Deliver. Custom line icons. Justifies premium rate via certainty/process.
+- **03 — Cara Saya Bekerja:** Discovery → Analyze → Facilitate (Sprint) → Build → Deliver. Custom line icons. Justifies premium rate via certainty/process (selling point #2).
 - **04 — Keahlian & Tools:** clean grid (BA tools, Agile, Flutter, PHP/Laravel, React, AI tooling).
 - **05 — Perjalanan:** minimal timeline (MSP/INAICTA 2013 → GameKita → Berca → Petrokimia).
-- **Kontak/Footer:** big CTA "Punya masalah operasional? Mari bicarakan." + email + LinkedIn + GitHub.
+- **Kontak/Footer:** big CTA "Punya masalah operasional? Mari bicarakan." + subtle selective line ("Menerima proyek terbatas — fokus pada dampak.") + email + LinkedIn + GitHub.
 
 ## 6. Technical Approach
 
@@ -109,8 +122,10 @@ Golden-time first, then proof. Few words, numbers do the talking.
 
 ## 9. Success Criteria
 
-- A visitor understands "what Yafi does + that he's proven + worth premium rate" within ~3 seconds of the hero.
-- Proof (rupiah savings, TKMPN, scale) is visible without scrolling far.
-- Does not look like a generic AI template.
+- Above-the-fold hero (verified at 1280×800 desktop AND mobile, no scroll) contains: name, one-line value prop, 3 role chips, ≥2 proof metrics, and the primary CTA.
+- Proof (rupiah savings, TKMPN, scale) is visible within the first viewport or one short scroll.
+- No award is phrased as a personal accolade; all are product/team-attributed per the guardrail.
+- Does not look like a generic AI template (no purple→blue gradient, no emoji fluff, serif×mono typography present).
 - Works as one file, opens offline, deploys free.
-- ID/EN toggle works and persists.
+- ID/EN toggle works, swaps all copy, keeps ID-style numbers, and persists via localStorage.
+- `prefers-reduced-motion` disables heavy hero animation.
