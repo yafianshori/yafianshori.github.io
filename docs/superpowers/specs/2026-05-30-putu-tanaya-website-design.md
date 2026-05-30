@@ -99,7 +99,7 @@ Hybrid story first (build + market proof), then services and process.
 
 - **Single file** `putu/index.html`. No build step. Opens directly in browser; deployable free to GitHub Pages / Netlify drag-drop. Lives in a `/putu/` subfolder so it coexists with Yafi's root `index.html`.
 - Tailwind via CDN (`cdn.tailwindcss.com`) with inline config for the custom rose/blush palette + fonts.
-- Google Fonts: one display serif + one monospace.
+- Google Fonts: one display serif + one monospace. The "script-like" feminine italic in §4 is the italic style of the chosen display serif (e.g. Fraunces italic) — NOT a third font load.
 - Vanilla JS for: ID/EN language toggle (data-attribute or JS dictionary), count-up on scroll (IntersectionObserver), scroll-reveal, hero floral/gradient animation, card hover detail.
 - **Bilingual:** all copy stored as `data-id` / `data-en` (or a JS dictionary keyed by language); toggle swaps text and persists choice in `localStorage`. Default: ID.
 - Accessibility: semantic HTML, alt text, sufficient contrast (verify rose-on-cream meets WCAG AA for body text), `prefers-reduced-motion` disables heavy animation.
@@ -124,7 +124,7 @@ Hybrid story first (build + market proof), then services and process.
 
 ## 9. Success Criteria
 
-- Above-the-fold hero (verified at 1280×800 desktop AND mobile, no scroll) contains: name, one-line hybrid value prop, the connected pillars, ≥2 proof points, and the primary CTA.
+- Above-the-fold hero (verified at 1280×800 desktop, no scroll) contains: name, one-line hybrid value prop, the connected pillars, ≥2 proof points, and the primary CTA. On mobile, the same elements are visible within the first viewport OR one short scroll (mobile may stack rather than fit everything without scroll).
 - Proof (CEO, GEMASTIK team win, Top 5 Mawapres) is visible within the first viewport or one short scroll.
 - No achievement is phrased as a solo accolade where it was a team/co-founded effort; team prizes labeled as team prizes per the guardrail.
 - No fabricated campaign metrics anywhere.
