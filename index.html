@@ -120,51 +120,78 @@
 <!-- ============ HERO ============ -->
 <section id="top" class="relative overflow-hidden">
   <div class="colrules mx-auto max-w-[1400px]" style="left:0;right:0"></div>
-  <canvas id="orbit" class="absolute right-0 top-0 h-full w-1/2 z-0 opacity-70 hidden lg:block" aria-hidden="true"></canvas>
+  <canvas id="orbit" class="absolute left-0 top-0 h-full w-1/2 z-0 opacity-50 hidden lg:block" aria-hidden="true"></canvas>
 
-  <div class="relative z-10 mx-auto max-w-[1400px] px-5 sm:px-10 pt-36 sm:pt-44 pb-20 sm:pb-28">
-    <div class="grid grid-cols-12 gap-x-5 gap-y-12">
+  <div class="relative z-10 mx-auto max-w-[1400px] px-5 sm:px-10 pt-32 sm:pt-40 pb-16 sm:pb-20">
+    <div class="grid grid-cols-12 gap-x-5 gap-y-12 items-center">
 
       <!-- left: headline -->
-      <div class="col-span-12 lg:col-span-8">
-        <p class="reveal font-mono text-[.7rem] tracking-[.28em] text-amber mb-8 sm:mb-10" data-i="hero.kicker">PORTOFOLIO &amp; PROFIL — 2026</p>
-        <h1 class="reveal font-disp font-medium tracking-[-.02em] leading-[.94] text-[3.4rem] sm:text-[6rem] lg:text-[7.4rem]" data-d="1">
+      <div class="col-span-12 lg:col-span-7">
+        <p class="reveal font-mono text-[.7rem] tracking-[.28em] text-amber mb-7 sm:mb-9" data-i="hero.kicker">PORTOFOLIO &amp; PROFIL — 2026</p>
+        <h1 class="reveal font-disp font-medium tracking-[-.02em] leading-[.92] text-[3.2rem] sm:text-[5.4rem] lg:text-[6.6rem]" data-d="1">
           <span class="block" data-i="hero.l1">Saya membangun</span>
           <span class="block" data-i="hero.l2">sistem yang</span>
           <span class="block italic-serif text-amber" data-i="hero.l3">menghemat miliaran.</span>
         </h1>
-        <p class="reveal mt-9 max-w-xl text-base sm:text-lg leading-relaxed text-paper/65" data-d="2" data-i="hero.sub">
+        <p class="reveal mt-8 max-w-xl text-base sm:text-lg leading-relaxed text-paper/65" data-d="2" data-i="hero.sub">
           Business Analyst, Scrum Master, dan Builder — dari memahami masalah operasional, memfasilitasi tim, sampai mengirim solusi yang dipakai mengalirkan jutaan ton pupuk ke seluruh Indonesia.
         </p>
-        <div class="reveal mt-10 flex flex-wrap items-center gap-4" data-d="3">
+        <div class="reveal mt-9 flex flex-wrap items-center gap-4" data-d="3">
           <a href="#contact" class="btn btn-fill font-mono text-[.74rem] tracking-[.06em] font-semibold px-6 py-3.5" data-i="hero.cta">HUBUNGI SAYA →</a>
           <a href="#work" class="btn btn-line font-mono text-[.74rem] tracking-[.06em] px-6 py-3.5" data-i="hero.cta2">LIHAT KARYA</a>
         </div>
-        <div class="reveal mt-12 flex items-center gap-6 font-mono text-[.66rem] tracking-[.12em] text-mut" data-d="3">
+        <div class="reveal mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-[.66rem] tracking-[.12em] text-mut" data-d="3">
           <span data-i="hero.r1">BUSINESS ANALYST</span><span class="text-line">/</span>
           <span data-i="hero.r2">SCRUM MASTER</span><span class="text-line">/</span>
           <span data-i="hero.r3">BUILDER</span>
         </div>
       </div>
 
-      <!-- right: stat stack -->
-      <div class="col-span-12 lg:col-span-4 lg:border-l border-line lg:pl-8 flex flex-col justify-end gap-8">
-        <div class="reveal" data-d="1">
-          <div class="font-disp stat-num text-6xl sm:text-7xl text-paper">Rp<span class="count" data-target="14.8" data-dec="1"> 0</span><span class="text-amber"> M</span></div>
-          <div class="mt-2 font-mono text-[.64rem] tracking-[.1em] text-mut leading-relaxed" data-i="hero.s1">EFISIENSI GUDANG DARI SISTEM YANG IA BANGUN</div>
-        </div>
-        <div class="h-px bg-line"></div>
-        <div class="reveal" data-d="2">
-          <div class="font-disp stat-num text-6xl sm:text-7xl text-paper"><span class="count" data-target="5.4" data-dec="1">0</span><span class="text-amber"> jt</span></div>
-          <div class="mt-2 font-mono text-[.64rem] tracking-[.1em] text-mut leading-relaxed" data-i="hero.s2">TON/TAHUN PUPUK DIKELOLA SISTEMNYA</div>
-        </div>
-        <div class="h-px bg-line"></div>
-        <div class="reveal" data-d="3">
-          <div class="font-disp stat-num text-6xl sm:text-7xl text-paper"><span class="count" data-target="4">0</span></div>
-          <div class="mt-2 font-mono text-[.64rem] tracking-[.1em] text-mut leading-relaxed" data-i="hero.s3">PRODUK AWARD-WINNING YANG IA BAWA</div>
-        </div>
+      <!-- right: portrait -->
+      <div class="col-span-12 lg:col-span-5 reveal" data-d="2">
+        <figure class="relative">
+          <div class="absolute -inset-px border border-line"></div>
+          <div class="absolute -top-3 -left-3 font-mono text-[.6rem] tracking-[.2em] text-amber bg-ink px-2 py-1 z-10">YAFI ANSHORI</div>
+          <div class="relative overflow-hidden">
+            <img src="assets/yafi-duo.jpg" alt="Potret Yafi Anshori" class="w-full h-auto block grayscale-0 transition-all duration-700 hover:scale-[1.02]" style="filter:saturate(.9)" />
+            <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent opacity-70"></div>
+            <div class="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink/40 to-transparent"></div>
+          </div>
+          <figcaption class="absolute bottom-3 left-3 right-3 flex items-end justify-between font-mono text-[.58rem] tracking-[.14em] text-paper/70 z-10">
+            <span data-i="hero.cap1">S.Tr.Kom · GRESIK, ID</span>
+            <span class="text-amber" data-i="hero.cap2">EST. 2013</span>
+          </figcaption>
+        </figure>
       </div>
 
+    </div>
+
+    <!-- stat band full width -->
+    <div class="reveal mt-14 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 border-t border-line" data-d="1">
+      <div class="py-7 sm:pr-8 sm:border-r border-line">
+        <div class="font-disp stat-num text-5xl sm:text-6xl text-paper">Rp<span class="count" data-target="14.8" data-dec="1"> 0</span><span class="text-amber"> M</span></div>
+        <div class="mt-2 font-mono text-[.62rem] tracking-[.1em] text-mut leading-relaxed" data-i="hero.s1">EFISIENSI GUDANG DARI SISTEM YANG IA BANGUN</div>
+      </div>
+      <div class="py-7 sm:px-8 sm:border-r border-line border-t sm:border-t-0">
+        <div class="font-disp stat-num text-5xl sm:text-6xl text-paper"><span class="count" data-target="5.4" data-dec="1">0</span><span class="text-amber"> jt</span></div>
+        <div class="mt-2 font-mono text-[.62rem] tracking-[.1em] text-mut leading-relaxed" data-i="hero.s2">TON/TAHUN PUPUK DIKELOLA SISTEMNYA</div>
+      </div>
+      <div class="py-7 sm:pl-8 border-t sm:border-t-0">
+        <div class="font-disp stat-num text-5xl sm:text-6xl text-paper"><span class="count" data-target="4">0</span></div>
+        <div class="mt-2 font-mono text-[.62rem] tracking-[.1em] text-mut leading-relaxed" data-i="hero.s3">PRODUK AWARD-WINNING YANG IA BAWA</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- award trust strip -->
+  <div class="border-t border-line bg-ink2/60">
+    <div class="mx-auto max-w-[1400px] px-5 sm:px-10 py-5 flex flex-wrap items-center gap-x-8 gap-y-2 font-mono text-[.64rem] tracking-[.14em] text-mut2">
+      <span class="text-amber" data-i="trust.label">DIAKUI DI —</span>
+      <span>TKMPN NASIONAL</span><span class="text-line">·</span>
+      <span>HANNOVER MESSE ’23</span><span class="text-line">·</span>
+      <span>ILA 2024</span><span class="text-line">·</span>
+      <span>BILA 2023 / 2025</span><span class="text-line">·</span>
+      <span>INAICTA ’13</span>
     </div>
   </div>
   <div class="h-px bg-line mx-auto max-w-[1400px]"></div>
@@ -323,6 +350,18 @@
       </div>
     </div>
   </div>
+
+  <!-- mood image band -->
+  <div class="reveal relative h-56 sm:h-80 border-t border-line overflow-hidden">
+    <img src="assets/m-truck.jpg" alt="Operasi logistik pelabuhan & kontainer" class="absolute inset-0 w-full h-full object-cover" style="filter:contrast(1.05) brightness(.7)" loading="lazy" />
+    <div class="absolute inset-0 bg-gradient-to-t from-ink2 via-ink2/30 to-ink2/70"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-ink2/80 via-transparent to-ink2/40"></div>
+    <div class="relative z-10 h-full mx-auto max-w-[1400px] px-5 sm:px-10 flex items-end pb-8">
+      <p class="font-disp italic-serif text-2xl sm:text-4xl text-paper/90 max-w-2xl leading-tight" data-i="impact.quote">
+        Skala nasional. 5,4 juta ton pupuk setiap tahun, mengalir tanpa hambatan.
+      </p>
+    </div>
+  </div>
 </section>
 
 <!-- ============ APPROACH ============ -->
@@ -389,7 +428,15 @@
     <div class="grid grid-cols-12 gap-x-5 gap-y-12">
       <div class="col-span-12 sm:col-span-2"><span class="font-mono text-[.7rem] tracking-[.2em] text-amber">04 — PROFIL</span></div>
 
-      <div class="col-span-12 sm:col-span-6">
+      <div class="col-span-12 sm:col-span-3 reveal">
+        <figure class="relative">
+          <div class="absolute -inset-px border border-line"></div>
+          <img src="assets/yafi.jpg" alt="Yafi Anshori" class="relative w-full h-auto block" style="filter:contrast(1.03) saturate(.96)" />
+          <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink2/60 to-transparent"></div>
+        </figure>
+      </div>
+
+      <div class="col-span-12 sm:col-span-7 sm:pl-2">
         <p class="reveal font-disp text-2xl sm:text-4xl leading-[1.15] tracking-[-.01em]" data-i="about.lead">
           Yafi Anshori, <span class="text-mut">S.Tr.Kom</span> — Business Analyst &amp; innovator di <span class="italic-serif text-amber">PT Petrokimia Gresik.</span>
         </p>
@@ -459,6 +506,8 @@ const EN = {
   "hero.sub":"Business Analyst, Scrum Master, and Builder — from understanding the operational problem, to facilitating the team, to shipping the solution that moves millions of tons of fertilizer across Indonesia.",
   "hero.cta":"CONTACT ME →","hero.cta2":"SEE WORK",
   "hero.r1":"BUSINESS ANALYST","hero.r2":"SCRUM MASTER","hero.r3":"BUILDER",
+  "hero.cap1":"S.Tr.Kom · GRESIK, ID","hero.cap2":"EST. 2013",
+  "trust.label":"RECOGNIZED AT —",
   "hero.s1":"WAREHOUSE EFFICIENCY FROM SYSTEMS HE BUILT",
   "hero.s2":"TONS/YEAR MANAGED BY HIS SYSTEMS",
   "hero.s3":"AWARD-WINNING PRODUCTS HE BROUGHT",
@@ -483,6 +532,7 @@ const EN = {
   "impact.a":"Projected savings from DTMS — the inter-warehouse material transfer system.",
   "impact.b":"From 1,361 down to 553 events per month after SISTRO went live.",
   "impact.c":"Plus 70+ transport partners within a single national-scale system.",
+  "impact.quote":"National scale. 5.4 million tons of fertilizer every year, flowing without friction.",
   "approach.title":"Not just writing code — I bridge","approach.title2":"business and technology.",
   "approach.s1t":"Find the root cause","approach.s1d":"As a Business Analyst, I dig out the real business need and translate it into clear requirements.",
   "approach.s2t":"Keep the team’s rhythm","approach.s2d":"As a Scrum Master, I remove blockers, protect sprint focus, and ensure on-time delivery.",

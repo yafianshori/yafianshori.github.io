@@ -25,7 +25,13 @@ Semua teks ada di dalam `index.html`:
 
 **Netlify / Vercel** — drag-drop folder ini, atau connect repo. Tidak perlu build command.
 
+## Aset gambar (folder `assets/`)
+- `yafi.jpg` — foto profil (About). `yafi-duo.jpg` — foto duotone amber (hero). `yafi-sm.jpg` — cadangan kecil.
+- `m-truck.jpg`, `m-logistics.jpg`, `m-warehouse.jpg` — foto mood logistik (duotone). Sumber: Unsplash (lisensi bebas).
+- Ganti foto: timpa file di `assets/` dengan nama sama, atau ubah `src` di `index.html`.
+
 ## Catatan
+- Gaya: Editorial Swiss — grid 12 kolom, Playfair Display × Inter × JetBrains Mono, palet ink + aksen amber.
 - Tailwind via CDN (cukup untuk situs statis pribadi).
 - Animasi hero mati otomatis bila pengguna mengaktifkan *reduce motion*.
 - Semua penghargaan dibingkai sebagai pencapaian produk, bukan klaim pribadi.

@@ -1,4 +1,7 @@
 .DS_Store
+f-*.png
+v-*.png
+r-*.png
 shot-*.png
-*-sm.png
+*-sm-tmp.png
 .playwright-mcp/
