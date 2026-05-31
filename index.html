@@ -175,6 +175,13 @@
   *:focus-visible{ outline:2px solid #3d6a8f; outline-offset:3px; border-radius:4px; }
   ::selection{ background:#3d6a8f; color:#fff; }
 
+  /* ===== deterrents (not real protection — anything in the browser can still be taken) ===== */
+  img{ -webkit-user-drag:none; -khtml-user-drag:none; -moz-user-drag:none; user-select:none; -webkit-user-select:none; pointer-events:none; }
+  /* keep interactive elements clickable even if they wrap an img */
+  a img, button img{ pointer-events:auto; }
+  /* blur the whole page when the tab loses focus or a screenshot is attempted */
+  body.guard-blur{ filter:blur(18px); transition:filter .12s; }
+
   @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
     .reveal{ opacity:1; transform:none; transition:none; }
@@ -688,6 +695,44 @@ if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
   style.textContent='.mesh::before{ animation:drift 18s ease-in-out infinite; }';
   document.head.appendChild(style);
 }
+
+/* ---------- deterrents: anti right-click / DevTools / save / screenshot ----------
+   NOTE: these only raise friction for casual users. Anything sent to the browser
+   can still be obtained (browser menu DevTools, disable JS, OS screenshot, direct
+   image URL). This is not real security. */
+(function(){
+  var b = document.body;
+
+  // block context menu (right-click "save image", "inspect")
+  document.addEventListener('contextmenu', function(e){ e.preventDefault(); }, false);
+
+  // block drag of images
+  document.addEventListener('dragstart', function(e){
+    if (e.target && e.target.tagName === 'IMG') e.preventDefault();
+  }, false);
+
+  // block common DevTools / view-source / save shortcuts
+  document.addEventListener('keydown', function(e){
+    var k = (e.key || '').toLowerCase();
+    if (e.key === 'F12') { e.preventDefault(); return; }
+    // Cmd/Ctrl+Opt/Shift + I/J/C  (DevTools, console, inspector)
+    if ((e.ctrlKey || e.metaKey) && (e.shiftKey || e.altKey) && ['i','j','c'].indexOf(k) !== -1) { e.preventDefault(); return; }
+    // Cmd/Ctrl+U (view source), Cmd/Ctrl+S (save page)
+    if ((e.ctrlKey || e.metaKey) && ['u','s'].indexOf(k) !== -1) { e.preventDefault(); return; }
+    // PrintScreen — blur briefly so a capture is degraded
+    if (e.key === 'PrintScreen' || k === 'printscreen') {
+      b.classList.add('guard-blur');
+      setTimeout(function(){ b.classList.remove('guard-blur'); }, 800);
+    }
+  }, false);
+
+  // blur page when tab loses focus (covers OS snip tools that defocus the window)
+  window.addEventListener('blur', function(){ b.classList.add('guard-blur'); });
+  window.addEventListener('focus', function(){ b.classList.remove('guard-blur'); });
+  document.addEventListener('visibilitychange', function(){
+    if (document.hidden) b.classList.add('guard-blur'); else b.classList.remove('guard-blur');
+  });
+})();
 </script>
 </body>
 </html>
