@@ -90,6 +90,60 @@
   .shadow-soft{ box-shadow:0 1px 3px rgba(0,55,112,.08), 0 18px 50px rgba(0,55,112,.12); }
   .shadow-card{ box-shadow:0 1px 3px rgba(0,55,112,.07), 0 8px 24px rgba(0,55,112,.08); }
 
+  /* ===== animations ===== */
+  /* gentle float for hero portrait + cards */
+  @keyframes floaty { 0%,100%{ transform:translateY(0) } 50%{ transform:translateY(-9px) } }
+  @keyframes floaty2 { 0%,100%{ transform:translateY(0) } 50%{ transform:translateY(7px) } }
+  .float-a{ animation:floaty 6s ease-in-out infinite; }
+  .float-b{ animation:floaty2 5s ease-in-out infinite .8s; }
+
+  /* shimmer sweep across portrait frame */
+  .shimmer{ position:relative; overflow:hidden; }
+  .shimmer::after{
+    content:""; position:absolute; top:0; left:-150%; width:60%; height:100%;
+    background:linear-gradient(100deg, transparent, rgba(255,255,255,.35), transparent);
+    transform:skewX(-18deg); animation:sweep 5.5s ease-in-out infinite;
+  }
+  @keyframes sweep{ 0%{ left:-150% } 35%,100%{ left:150% } }
+
+  /* animated indigo gradient on hero word */
+  .grad-text{
+    background:linear-gradient(100deg,#533afd,#665efd,#f96bee,#533afd);
+    background-size:280% auto; -webkit-background-clip:text; background-clip:text; color:transparent;
+    animation:hue 7s ease infinite;
+  }
+  @keyframes hue{ 0%{ background-position:0% } 50%{ background-position:100% } 100%{ background-position:0% } }
+
+  /* count-up stat pop on reveal */
+  @keyframes popin{ 0%{ transform:scale(.96); opacity:0 } 100%{ transform:scale(1); opacity:1 } }
+
+  /* nav link slide underline */
+  .nlk{ position:relative; }
+  .nlk::after{ content:""; position:absolute; left:0; bottom:-4px; height:2px; width:100%; background:#533afd; border-radius:2px; transform:scaleX(0); transform-origin:center; transition:transform .3s cubic-bezier(.16,1,.3,1); }
+  .nlk:hover::after{ transform:scaleX(1); }
+
+  /* button arrow nudge */
+  .btn-primary .arr, .arr{ display:inline-block; transition:transform .25s cubic-bezier(.16,1,.3,1); }
+  .btn-primary:hover .arr, a:hover > .arr{ transform:translateX(4px); }
+
+  /* card lift index accent grow */
+  .card-h::before{ content:""; position:absolute; left:0; top:0; height:3px; width:0; background:linear-gradient(90deg,#533afd,#f96bee); border-radius:12px 12px 0 0; transition:width .4s cubic-bezier(.16,1,.3,1); }
+  .card-h{ position:relative; }
+  .card-h:hover::before{ width:100%; }
+
+  /* scroll cue */
+  @keyframes bob{ 0%,100%{ transform:translateY(0); opacity:.5 } 50%{ transform:translateY(6px); opacity:1 } }
+  .scroll-cue{ animation:bob 2s ease-in-out infinite; }
+
+  /* impact mood image slow zoom */
+  @keyframes kenburns{ 0%{ transform:scale(1) } 100%{ transform:scale(1.08) } }
+  .kenburns{ animation:kenburns 14s ease-out forwards; }
+
+  @media (prefers-reduced-motion: reduce){
+    .float-a,.float-b,.shimmer::after,.grad-text,.scroll-cue,.kenburns{ animation:none !important; }
+    .grad-text{ color:#533afd; }
+  }
+
   *:focus-visible{ outline:2px solid #533afd; outline-offset:3px; border-radius:4px; }
   ::selection{ background:#533afd; color:#fff; }
 
@@ -111,10 +165,10 @@
         Yafi Anshori
       </a>
       <nav class="hidden md:flex items-center gap-8 text-[.9rem] text-ink2" style="font-weight:400">
-        <a href="#work" class="hover:text-indigo transition-colors" data-i="nav.work">Karya</a>
-        <a href="#impact" class="hover:text-indigo transition-colors" data-i="nav.impact">Dampak</a>
-        <a href="#approach" class="hover:text-indigo transition-colors" data-i="nav.approach">Pendekatan</a>
-        <a href="#about" class="hover:text-indigo transition-colors" data-i="nav.about">Profil</a>
+        <a href="#work" class="nlk hover:text-indigo transition-colors" data-i="nav.work">Karya</a>
+        <a href="#impact" class="nlk hover:text-indigo transition-colors" data-i="nav.impact">Dampak</a>
+        <a href="#approach" class="nlk hover:text-indigo transition-colors" data-i="nav.approach">Pendekatan</a>
+        <a href="#about" class="nlk hover:text-indigo transition-colors" data-i="nav.about">Profil</a>
       </nav>
       <div class="flex items-center gap-1.5">
         <button id="lang" class="text-[.82rem] text-mute hover:text-ink transition-colors px-2.5 py-1.5 rounded-full cursor-pointer" aria-label="Ganti bahasa">
@@ -141,29 +195,29 @@
         <h1 class="reveal disp mt-7 text-[2.9rem] sm:text-[4.4rem] lg:text-[5rem] text-ink" data-d="1">
           <span class="block" data-i="hero.l1">Saya membangun sistem</span>
           <span class="block" data-i="hero.l2">yang menghemat</span>
-          <span class="block text-indigo" data-i="hero.l3">miliaran rupiah.</span>
+          <span class="block grad-text" data-i="hero.l3">miliaran rupiah.</span>
         </h1>
         <p class="reveal mt-7 max-w-xl text-lg text-ink2 leading-relaxed" data-d="2" style="font-weight:300" data-i="hero.sub">
           Dari memahami masalah operasional, memfasilitasi tim, sampai mengirim solusi — yang dipakai mengalirkan jutaan ton pupuk ke seluruh Indonesia.
         </p>
         <div class="reveal mt-9 flex flex-wrap items-center gap-3" data-d="3">
-          <a href="#contact" class="pill btn-primary text-[.95rem] font-medium px-6 py-3" data-i="hero.cta">Hubungi Saya →</a>
+          <a href="#contact" class="pill btn-primary text-[.95rem] font-medium px-6 py-3" data-i="hero.cta">Hubungi Saya <span class="arr">→</span></a>
           <a href="#work" class="pill btn-ghost text-[.95rem] font-medium px-6 py-3 border border-hair bg-white/70" data-i="hero.cta2">Lihat Karya</a>
         </div>
       </div>
 
       <!-- right: portrait card -->
       <div class="col-span-12 lg:col-span-5 reveal" data-d="2">
-        <div class="relative max-w-[380px] mx-auto lg:ml-auto">
-          <div class="absolute -top-4 -left-4 bg-white rounded-xl shadow-card px-4 py-3 z-20 border border-hair">
+        <div class="relative max-w-[380px] mx-auto lg:ml-auto float-a">
+          <div class="absolute -top-4 -left-4 bg-white rounded-xl shadow-card px-4 py-3 z-20 border border-hair float-b">
             <div class="text-[.62rem] text-mute tracking-wide" data-i="hero.card1">EFISIENSI</div>
             <div class="text-xl font-semibold text-ink tnum">Rp 14,8 M+</div>
           </div>
-          <div class="absolute -bottom-4 -right-4 bg-navy text-white rounded-xl shadow-soft px-4 py-3 z-20">
+          <div class="absolute -bottom-4 -right-4 bg-navy text-white rounded-xl shadow-soft px-4 py-3 z-20 float-a" style="animation-delay:1.4s">
             <div class="text-[.62rem] text-white/60 tracking-wide" data-i="hero.card2">DIAKUI NASIONAL</div>
             <div class="text-xl font-semibold tnum">4 produk</div>
           </div>
-          <div class="rounded-2xl overflow-hidden shadow-soft border border-white/60 bg-white">
+          <div class="shimmer rounded-2xl overflow-hidden shadow-soft border border-white/60 bg-white">
             <img src="assets/yafi.jpg" alt="Potret Yafi Anshori" class="w-full h-auto block" />
           </div>
         </div>
@@ -276,17 +330,17 @@
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
-      <div class="card p-8 reveal">
+      <div class="card card-h p-8 reveal">
         <div class="disp text-6xl text-indigo tnum">12,9</div>
         <div class="mt-3 text-[.78rem] font-medium tracking-wide text-mute">MILIAR / TAHUN</div>
         <p class="mt-2 text-[.92rem] text-ink2 leading-relaxed" style="font-weight:300" data-i="impact.a">Potensi penghematan dari DTMS — sistem pemindahan material antar-gudang.</p>
       </div>
-      <div class="card p-8 reveal" data-d="1">
+      <div class="card card-h p-8 reveal" data-d="1">
         <div class="disp text-6xl text-ink tnum">61<span class="text-indigo">%</span></div>
         <div class="mt-3 text-[.78rem] font-medium tracking-wide text-mute">TRUK TELAT BERKURANG</div>
         <p class="mt-2 text-[.92rem] text-ink2 leading-relaxed" style="font-weight:300" data-i="impact.b">Dari 1.361 menjadi 553 kejadian per bulan setelah SISTRO diterapkan.</p>
       </div>
-      <div class="card p-8 reveal" data-d="2">
+      <div class="card card-h p-8 reveal" data-d="2">
         <div class="disp text-6xl text-ink tnum">70<span class="text-indigo">+</span></div>
         <div class="mt-3 text-[.78rem] font-medium tracking-wide text-mute">MITRA TRANSPORTASI</div>
         <p class="mt-2 text-[.92rem] text-ink2 leading-relaxed" style="font-weight:300" data-i="impact.c">Dalam satu sistem terpadu berskala nasional — Jawa & Bali.</p>
@@ -313,17 +367,17 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-      <div class="card p-8 reveal">
+      <div class="card card-h p-8 reveal">
         <div class="w-11 h-11 rounded-xl bg-indigoSub flex items-center justify-center text-indigoDp font-semibold">A</div>
         <h3 class="mt-5 text-xl font-semibold text-ink" data-i="approach.s1t">Analisis bisnis</h3>
         <p class="mt-2 text-[.93rem] text-ink2 leading-relaxed" style="font-weight:300" data-i="approach.s1d">Sebagai Business Analyst, saya menggali kebutuhan bisnis yang sebenarnya dan menerjemahkannya jadi requirement yang jernih.</p>
       </div>
-      <div class="card p-8 reveal" data-d="1">
+      <div class="card card-h p-8 reveal" data-d="1">
         <div class="w-11 h-11 rounded-xl bg-indigoSub flex items-center justify-center text-indigoDp font-semibold">B</div>
         <h3 class="mt-5 text-xl font-semibold text-ink" data-i="approach.s2t">Fasilitasi tim</h3>
         <p class="mt-2 text-[.93rem] text-ink2 leading-relaxed" style="font-weight:300" data-i="approach.s2d">Sebagai Scrum Master, saya menghapus hambatan, menjaga fokus sprint, dan memastikan delivery tepat waktu.</p>
       </div>
-      <div class="card p-8 reveal" data-d="2">
+      <div class="card card-h p-8 reveal" data-d="2">
         <div class="w-11 h-11 rounded-xl bg-indigoSub flex items-center justify-center text-indigoDp font-semibold">C</div>
         <h3 class="mt-5 text-xl font-semibold text-ink" data-i="approach.s3t">Bangun solusi</h3>
         <p class="mt-2 text-[.93rem] text-ink2 leading-relaxed" style="font-weight:300" data-i="approach.s3d">Sebagai Builder, saya turun langsung — web, mobile, otomasi — sehingga solusi benar-benar jadi, bukan berhenti di dokumen.</p>
@@ -396,11 +450,16 @@
           <span class="block text-indigoSf" data-i="contact.l2">yang mahal?</span>
         </h2>
         <p class="reveal mt-6 text-lg text-white/70 max-w-xl leading-relaxed" style="font-weight:300" data-d="2" data-i="contact.sub">Mari ubah jadi sistem yang menghemat. Menerima proyek terbatas — fokus pada dampak.</p>
-        <div class="reveal mt-9" data-d="2">
-          <a href="mailto:yafians@gmail.com" class="pill btn-primary text-[.98rem] font-medium px-7 py-3.5">Hubungi Saya →</a>
+        <div class="reveal mt-9 flex flex-wrap items-center gap-3" data-d="2">
+          <a href="https://wa.me/6281335110533" target="_blank" rel="noopener" class="pill btn-primary text-[.98rem] font-medium px-7 py-3.5" data-i="contact.cta">Chat WhatsApp <span class="arr">→</span></a>
+          <a href="mailto:yafians@gmail.com" class="pill text-[.98rem] font-medium px-7 py-3.5 border border-white/25 text-white hover:bg-white/10 transition-colors" data-i="contact.cta2">Email Saya</a>
         </div>
       </div>
       <div class="col-span-12 lg:col-span-4 lg:border-l border-white/15 lg:pl-8 flex flex-col justify-end gap-3 reveal" data-d="3">
+        <a href="https://wa.me/6281335110533" target="_blank" rel="noopener" class="group flex items-center gap-2 text-white/85 hover:text-white transition-colors">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.738-.981a9.9 9.9 0 002.74 1.274z"/><path d="M9.5 6.8c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 2.4 1 2.9.8 3.4.7.5 0 1.6-.6 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3-.3-.2-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1-.2.3-.6.9-.8 1.1-.1.1-.3.2-.5.1-.3-.2-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.1-.3 0-.4.1-.5l.4-.5c.1-.2.2-.3.2-.5.1-.2 0-.3 0-.5s-.6-1.5-.8-2z"/></svg>
+          <span class="tnum">+62 813-3511-0533</span>
+        </a>
         <a href="mailto:yafians@gmail.com" class="text-white/85 hover:text-white transition-colors break-all">yafians@gmail.com</a>
         <a href="https://www.linkedin.com/in/yafianshori/" target="_blank" rel="noopener" class="text-white/85 hover:text-white transition-colors">LinkedIn ↗</a>
         <a href="https://github.com/yafianshori" target="_blank" rel="noopener" class="text-white/85 hover:text-white transition-colors">GitHub ↗</a>
@@ -414,6 +473,14 @@
     </div>
   </div>
 </section>
+
+<!-- floating WhatsApp -->
+<a id="fab" href="https://wa.me/6281335110533" target="_blank" rel="noopener"
+   class="fixed bottom-5 right-5 z-50 flex items-center gap-2 bg-[#25D366] text-white font-medium text-sm pl-4 pr-5 py-3 rounded-full shadow-soft opacity-0 translate-y-4 pointer-events-none transition-all duration-300 hover:scale-105"
+   aria-label="Chat WhatsApp">
+  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.738-.981a9.9 9.9 0 002.74 1.274z"/><path d="M9.5 6.8c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 2.4 1 2.9.8 3.4.7.5 0 1.6-.6 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3-.3-.2-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1-.2.3-.6.9-.8 1.1-.1.1-.3.2-.5.1-.3-.2-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.1-.3 0-.4.1-.5l.4-.5c.1-.2.2-.3.2-.5.1-.2 0-.3 0-.5s-.6-1.5-.8-2z"/></svg>
+  <span class="hidden sm:inline">WhatsApp</span>
+</a>
 
 <script>
 /* ---------- i18n ---------- */
@@ -457,7 +524,8 @@ const EN = {
   "about.t3d":"NOW","about.t3":"Business Analyst & innovator at Petrokimia Gresik — systems that won TKMPN & were showcased at Hannover Messe.",
   "contact.eyebrow":"LET’S TALK","contact.l1":"Got an expensive","contact.l2":"operational problem?",
   "contact.sub":"Let’s turn it into a system that saves. Taking on limited projects — focused on impact.",
-  "footer.note":"Built by hand · One file · No template"
+  "contact.cta":"Chat on WhatsApp →","contact.cta2":"Email Me",
+  "footer.tag":"Business Analyst · Scrum Master · Builder"
 };
 const nodes = document.querySelectorAll('[data-i]');
 const ID = {}; nodes.forEach(n => ID[n.getAttribute('data-i')] = n.innerHTML);
@@ -474,6 +542,16 @@ if(lang==='en') setLang('en');
 document.getElementById('lang').addEventListener('click',()=>{ lang=lang==='en'?'id':'en'; setLang(lang); });
 
 document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* ---------- floating WhatsApp show after hero ---------- */
+const fab = document.getElementById('fab');
+const fabIO = new IntersectionObserver((es)=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){ fab.classList.add('opacity-0','translate-y-4','pointer-events-none'); }
+    else { fab.classList.remove('opacity-0','translate-y-4','pointer-events-none'); }
+  });
+},{threshold:0});
+const topSec=document.getElementById('top'); if(topSec) fabIO.observe(topSec);
 
 /* ---------- reveal ---------- */
 const rio = new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); rio.unobserve(e.target);} }); },{threshold:.12});
