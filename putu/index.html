@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Putu Tanaya — Product · Brand · Growth</title>
+  <meta name="description" content="Putu Alicia Sarah Sativa Tanaya (Caca) — hybrid builder-marketer. From IT and startups to performance marketing: leading products from idea to growth, understanding both the product and the numbers." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: '#FBF4F1', blush: '#FDF4F7', blush2: '#FBEFF2',
+            rose: '#C9607A', rose2: '#D17A95',
+            ink: '#2B1A1F', ink2: '#3A2128',
+            mauve: '#9A7782', mauve2: '#6B4A55'
+          },
+          fontFamily: {
+            serif: ['Fraunces', 'Georgia', 'serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    :root { color-scheme: light; }
+
+    html { scroll-behavior: smooth; }
+
+    /* Faint grain + blush atmosphere */
+    body {
+      background-color: #FBF4F1;
+      background-image:
+        radial-gradient(120% 90% at 12% -8%, #FDF4F7 0%, rgba(253,244,247,0) 46%),
+        radial-gradient(95% 80% at 100% 0%, #FBEFF2 0%, rgba(251,239,242,0) 40%),
+        radial-gradient(80% 70% at 50% 120%, #FDF4F7 0%, rgba(253,244,247,0) 55%);
+      background-attachment: fixed;
+    }
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* Body copy rhythm */
+    .copy { line-height: 1.65; }
+
+    /* Type scale */
+    .t-display { font-size: clamp(3rem, 7.2vw, 5rem); line-height: 0.98; letter-spacing: -0.022em; }
+    .t-h2      { font-size: clamp(1.75rem, 3.4vw, 2.6rem); line-height: 1.06; letter-spacing: -0.015em; }
+    .t-metric  { font-size: clamp(2.6rem, 5vw, 3.6rem); line-height: 1; letter-spacing: -0.02em; }
+    .t-eyebrow { font-size: 0.72rem; letter-spacing: 0.26em; }
+    .t-label   { font-size: 0.72rem; letter-spacing: 0.22em; }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* Card detail reveal on hover/focus */
+    .card-detail { max-height: 0; opacity: 0; overflow: hidden; transition: max-height .45s ease, opacity .45s ease, margin-top .45s ease; margin-top: 0; }
+    .proof-card:hover .card-detail,
+    .proof-card:focus-within .card-detail { max-height: 8rem; opacity: 1; margin-top: 0.85rem; }
+
+    /* Petal drift */
+    @keyframes drift { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-14px) rotate(3deg); } }
+    @keyframes driftB { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(12px) rotate(-4deg); } }
+    .drift  { animation: drift 13s ease-in-out infinite; }
+    .driftB { animation: driftB 16s ease-in-out infinite; }
+
+    /* Focus rings */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid #C9607A;
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .hairline { border-color: rgba(154, 119, 130, 0.28); }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none; }
+      .drift, .driftB { animation: none !important; }
+      * { transition-duration: .001ms !important; }
+    }
+  </style>
+</head>
+
+<body class="bg-paper text-ink font-serif antialiased">
+
+  <!-- BLOCKING: confirm real email + IG/WA before launch (spec §3) -->
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-ink focus:text-paper focus:px-4 focus:py-2 focus:rounded-full font-mono text-xs">Skip to content</a>
+
+  <!-- ============ NAV ============ -->
+  <nav class="relative z-30 max-w-6xl mx-auto px-6 md:px-8 pt-6 md:pt-7 flex items-center justify-between gap-4" aria-label="Primary">
+    <a href="#main" class="font-mono text-mauve2 text-[0.68rem] sm:text-xs tracking-[0.2em] hover:text-rose transition-colors duration-200">PUTU TANAYA · CACA</a>
+    <div class="flex items-center gap-3 sm:gap-5">
+      <div class="flex items-center gap-1 font-mono text-xs text-mauve2" role="group" aria-label="Language">
+        <button data-lang-btn="id" class="px-1.5 py-1 hover:text-rose transition-colors duration-200 cursor-pointer">ID</button>
+        <span class="text-mauve/50" aria-hidden="true">·</span>
+        <button data-lang-btn="en" class="px-1.5 py-1 hover:text-rose transition-colors duration-200 cursor-pointer">EN</button>
+      </div>
+      <a data-i18n="nav_cta" href="#kontak" class="font-mono text-[0.7rem] sm:text-xs tracking-wide bg-ink text-paper px-4 py-2 rounded-full hover:bg-rose transition-colors duration-200 cursor-pointer whitespace-nowrap">Kerja Sama</a>
+    </div>
+  </nav>
+
+  <main id="main" tabindex="-1" class="relative z-10">
+
+    <!-- ============ HERO ============ -->
+    <header class="relative max-w-6xl mx-auto px-6 md:px-8 pt-16 sm:pt-20 md:pt-24 pb-20 md:pb-28 overflow-hidden">
+      <!-- Floral accents -->
+      <svg class="drift absolute -top-6 -right-10 w-72 h-72 md:w-96 md:h-96 text-rose2 pointer-events-none select-none" style="opacity:0.12" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+        <g stroke="currentColor" stroke-width="1.1" fill="none">
+          <path d="M100 40 C118 56 118 84 100 100 C82 84 82 56 100 40Z"/>
+          <path d="M160 100 C144 118 116 118 100 100 C116 82 144 82 160 100Z"/>
+          <path d="M100 160 C82 144 82 116 100 100 C118 116 118 144 100 160Z"/>
+          <path d="M40 100 C56 82 84 82 100 100 C84 118 56 118 40 100Z"/>
+          <path d="M142 58 C136 78 116 92 100 100 C108 80 122 64 142 58Z"/>
+          <path d="M58 142 C64 122 80 108 100 100 C92 116 78 136 58 142Z"/>
+        </g>
+        <circle cx="100" cy="100" r="6" fill="currentColor"/>
+      </svg>
+      <svg class="driftB absolute bottom-0 -left-16 w-64 h-64 md:w-80 md:h-80 text-rose pointer-events-none select-none" style="opacity:0.10" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+        <g stroke="currentColor" stroke-width="1.1" fill="none">
+          <path d="M100 50 C112 64 112 86 100 100 C88 86 88 64 100 50Z"/>
+          <path d="M150 100 C136 112 114 112 100 100 C114 88 136 88 150 100Z"/>
+          <path d="M100 150 C88 136 88 114 100 100 C112 114 112 136 100 150Z"/>
+          <path d="M50 100 C64 88 86 88 100 100 C86 112 64 112 50 100Z"/>
+        </g>
+        <circle cx="100" cy="100" r="5" fill="currentColor"/>
+      </svg>
+      <svg class="drift absolute top-1/2 right-1/3 w-24 h-24 text-rose2 pointer-events-none select-none hidden md:block" style="opacity:0.09" viewBox="0 0 100 100" aria-hidden="true">
+        <g stroke="currentColor" stroke-width="1.4" fill="none">
+          <path d="M50 22 C58 32 58 44 50 52 C42 44 42 32 50 22Z"/>
+          <path d="M78 50 C68 58 56 58 50 52 C56 44 68 42 78 50Z"/>
+          <path d="M50 78 C42 68 42 56 50 50 C58 56 58 68 50 78Z"/>
+          <path d="M22 50 C32 42 44 42 50 50 C44 58 32 58 22 50Z"/>
+        </g>
+      </svg>
+
+      <div class="relative">
+        <p data-i18n="hero_eyebrow" class="font-mono t-eyebrow text-rose uppercase mb-7 reveal">PRODUCT · PROJECT · BRAND · GROWTH</p>
+
+        <h1 class="t-display max-w-[14ch] mb-8 reveal" style="transition-delay:.06s">
+          <span data-i18n="hero_title_a">Membangun produk —</span>
+          <em data-i18n="hero_title_em" class="text-rose italic font-light">dan brand yang menjualnya.</em>
+        </h1>
+
+        <p data-i18n="hero_sub" class="copy text-ink2 text-lg md:text-xl max-w-[46ch] mb-10 reveal" style="transition-delay:.12s">Dari IT &amp; startup ke performance marketing. Saya pimpin proyek dari ide sampai bertumbuh — paham produknya, paham angkanya.</p>
+
+        <div class="flex flex-wrap items-center gap-x-7 gap-y-4 mb-16 md:mb-20 reveal" style="transition-delay:.18s">
+          <a data-i18n="nav_cta" href="#kontak" class="font-mono text-sm tracking-wide bg-rose text-paper px-7 py-3.5 rounded-full hover:bg-ink transition-colors duration-200 cursor-pointer">Kerja Sama</a>
+          <a href="https://www.linkedin.com/in/putu-alicia-sarah-sativa-tanaya-4744401a9/" target="_blank" rel="noopener" class="group font-mono text-sm tracking-wide text-mauve2 hover:text-rose transition-colors duration-200 inline-flex items-center gap-2">
+            <span>[ LinkedIn ]</span>
+            <span class="inline-block transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <!-- Proof metrics -->
+        <dl class="grid grid-cols-1 sm:grid-cols-3 gap-y-9 gap-x-8 max-w-3xl border-t hairline pt-9 md:pt-10">
+          <div class="reveal" style="transition-delay:.10s">
+            <dd class="t-metric font-light text-ink" data-countup="13" data-prefix="Rp " data-suffix=" jt">Rp 13 jt</dd>
+            <dt data-i18n="m1" class="font-mono t-label text-mauve2 uppercase mt-3">GEMASTIK 10 (tim)</dt>
+          </div>
+          <div class="reveal" style="transition-delay:.18s">
+            <dd class="t-metric font-light text-rose">CEO</dd>
+            <dt data-i18n="m2" class="font-mono t-label text-mauve2 uppercase mt-3">STARTUP BELUMNEMU</dt>
+          </div>
+          <div class="reveal" style="transition-delay:.26s">
+            <dd class="t-metric font-light text-ink">Top 5</dd>
+            <dt data-i18n="m3" class="font-mono t-label text-mauve2 uppercase mt-3">MAWAPRES UISI 2019</dt>
+          </div>
+        </dl>
+      </div>
+    </header>
+
+    <!-- ============ 01 — PROOF ============ -->
+    <section id="proof" class="max-w-6xl mx-auto px-6 md:px-8 py-16 md:py-24" aria-labelledby="proof-label">
+      <p id="proof-label" data-i18n="s1_label" class="font-mono t-label text-rose uppercase mb-10 md:mb-12 reveal">01 — YANG SAYA BAWA</p>
+      <div class="grid md:grid-cols-2 gap-5 md:gap-6">
+
+        <article class="proof-card reveal group bg-blush rounded-2xl border hairline p-7 md:p-8 transition-shadow duration-300 hover:shadow-[0_18px_40px_-24px_rgba(201,96,122,0.45)] focus-within:shadow-[0_18px_40px_-24px_rgba(201,96,122,0.45)]" tabindex="0">
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <h3 class="t-h2 font-medium">BelumNemu</h3>
+            <span class="font-mono text-[0.62rem] tracking-wider uppercase bg-rose text-paper px-2.5 py-1 rounded-full whitespace-nowrap mt-1.5">CEO</span>
+          </div>
+          <p data-i18n="p1_desc" class="copy text-ink2">Startup: tag scan untuk barang hilang. Memimpin tim produk (co-founder).</p>
+          <p data-i18n="p1_detail" class="card-detail copy text-sm text-mauve2 font-mono">Tim: Fitri Kharismawati (PM), Zeni Maliha (Designer).</p>
+        </article>
+
+        <article class="proof-card reveal group bg-blush rounded-2xl border hairline p-7 md:p-8 transition-shadow duration-300 hover:shadow-[0_18px_40px_-24px_rgba(201,96,122,0.45)] focus-within:shadow-[0_18px_40px_-24px_rgba(201,96,122,0.45)]" tabindex="0" style="transition-delay:.06s">
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <h3 class="t-h2 font-medium">GEMASTIK 10</h3>
+            <span data-i18n="p2_badge" class="font-mono text-[0.62rem] tracking-wider uppercase bg-rose text-paper px-2.5 py-1 rounded-full whitespace-nowrap mt-1.5">Juara 1 · tim</span>
+          </div>
+          <p data-i18n="p2_desc" class="copy text-ink2">Idea Rush + Best Poster. Repotizen (IoT). Tim Aphrodite.</p>
+          <p data-i18n="p2_detail" class="card-detail copy text-sm text-mauve2 font-mono">Hadiah tim Rp 13 jt · UI 2017.</p>
+        </article>
+
+        <article class="proof-card reveal group bg-blush rounded-2xl border hairline p-7 md:p-8 transition-shadow duration-300 hover:shadow-[0_18px_40px_-24px_rgba(201,96,122,0.45)] focus-within:shadow-[0_18px_40px_-24px_rgba(201,96,122,0.45)]" tabindex="0" style="transition-delay:.12s">
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <h3 class="t-h2 font-medium">Mawapres + Pilmapres</h3>
+            <span data-i18n="p3_badge" class="font-mono text-[0.62rem] tracking-wider uppercase border border-rose/50 text-rose px-2.5 py-1 rounded-full whitespace-nowrap mt-1.5">personal</span>
+          </div>
+          <p data-i18n="p3_desc" class="copy text-ink2">Top 5 Mawapres UISI 2019 · Runner-up 2 Pilmapres Kopertis VII.</p>
+          <p data-i18n="p3_detail" class="card-detail copy text-sm text-mauve2 font-mono">Penghargaan individu.</p>
+        </article>
+
+        <article class="proof-card reveal group bg-blush rounded-2xl border hairline p-7 md:p-8 transition-shadow duration-300 hover:shadow-[0_18px_40px_-24px_rgba(201,96,122,0.45)] focus-within:shadow-[0_18px_40px_-24px_rgba(201,96,122,0.45)]" tabindex="0" style="transition-delay:.18s">
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <h3 class="t-h2 font-medium">Canbeauty → Albata</h3>
+          </div>
+          <p data-i18n="p4_desc" class="copy text-ink2">Marketing Mgr → Digital Marketing. Beauty &amp; edukasi.</p>
+          <p data-i18n="p4_detail" class="card-detail copy text-sm text-mauve2 font-mono">Performance marketing untuk produk konsumen.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ 02 — SERVICES ============ -->
+    <section id="layanan" class="max-w-6xl mx-auto px-6 md:px-8 py-16 md:py-24" aria-labelledby="serv-label">
+      <p id="serv-label" data-i18n="s2_label" class="font-mono t-label text-rose uppercase mb-10 md:mb-12 reveal">02 — LAYANAN</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+
+        <article class="reveal bg-paper rounded-2xl border hairline p-7 hover:border-rose/60 transition-colors duration-300">
+          <svg class="w-9 h-9 text-rose mb-5" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+            <rect x="7" y="7" width="22" height="22" rx="5"/><path d="M7 15h22M14 15v14"/>
+            <path d="M21 22c0-3 5-3 5 0s-5 3-5 0Z" stroke-width="1.2"/>
+          </svg>
+          <h3 data-i18n="svc1_t" class="text-xl font-medium mb-2">Product / PM</h3>
+          <p data-i18n="svc1_d" class="copy text-ink2 text-sm">Ide → produk → kelola tim &amp; roadmap.</p>
+        </article>
+
+        <article class="reveal bg-paper rounded-2xl border hairline p-7 hover:border-rose/60 transition-colors duration-300" style="transition-delay:.06s">
+          <svg class="w-9 h-9 text-rose mb-5" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+            <path d="M18 6 C22 12 22 16 18 20 C14 16 14 12 18 6Z"/>
+            <path d="M30 18 C24 22 20 22 18 20 C20 16 24 14 30 18Z"/>
+            <path d="M18 30 C14 24 14 20 18 20 C22 20 24 24 18 30Z"/>
+            <path d="M6 18 C12 14 16 14 18 20 C16 22 12 24 6 18Z"/>
+          </svg>
+          <h3 data-i18n="svc2_t" class="text-xl font-medium mb-2">Brand Strategy</h3>
+          <p data-i18n="svc2_d" class="copy text-ink2 text-sm">Positioning, identity, messaging.</p>
+        </article>
+
+        <article class="reveal bg-paper rounded-2xl border hairline p-7 hover:border-rose/60 transition-colors duration-300" style="transition-delay:.12s">
+          <svg class="w-9 h-9 text-rose mb-5" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+            <path d="M6 26 L14 16 L20 21 L30 9"/><path d="M24 9h6v6"/>
+            <circle cx="14" cy="16" r="1.6" fill="currentColor" stroke="none"/>
+            <circle cx="20" cy="21" r="1.6" fill="currentColor" stroke="none"/>
+          </svg>
+          <h3 data-i18n="svc3_t" class="text-xl font-medium mb-2">Performance / Paid Ads</h3>
+          <p data-i18n="svc3_d" class="copy text-ink2 text-sm">Paid social/search, optimasi ROAS.</p>
+        </article>
+
+        <article class="reveal bg-paper rounded-2xl border hairline p-7 hover:border-rose/60 transition-colors duration-300" style="transition-delay:.18s">
+          <svg class="w-9 h-9 text-rose mb-5" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+            <rect x="7" y="22" width="4" height="7" rx="1"/><rect x="16" y="16" width="4" height="13" rx="1"/><rect x="25" y="10" width="4" height="19" rx="1"/>
+            <path d="M9 18 C13 14 17 14 18 12" stroke-width="1.2"/>
+          </svg>
+          <h3 data-i18n="svc4_t" class="text-xl font-medium mb-2">Content &amp; Data</h3>
+          <p data-i18n="svc4_d" class="copy text-ink2 text-sm">Konten, social, analytics &amp; insight.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ 03 — PROCESS ============ -->
+    <section id="proses" class="max-w-6xl mx-auto px-6 md:px-8 py-16 md:py-24" aria-labelledby="proc-label">
+      <p id="proc-label" data-i18n="s3_label" class="font-mono t-label text-rose uppercase mb-10 md:mb-12 reveal">03 — CARA SAYA BEKERJA</p>
+      <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-y-8 gap-x-4 md:gap-x-2">
+
+        <li class="reveal relative pr-4">
+          <div class="flex items-center gap-3 mb-4">
+            <svg class="w-7 h-7 text-rose" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="6"/><path d="M16.5 16.5 22 22"/></svg>
+            <span class="font-mono text-xs text-mauve">01</span>
+          </div>
+          <h3 data-i18n="proc1_t" class="text-lg font-medium mb-1">Riset</h3>
+          <p data-i18n="proc1_d" class="copy text-sm text-ink2">Pahami masalah, pasar, dan pengguna.</p>
+          <span class="hidden lg:block absolute top-3.5 right-0 text-rose/40" aria-hidden="true">→</span>
+        </li>
+
+        <li class="reveal relative pr-4" style="transition-delay:.06s">
+          <div class="flex items-center gap-3 mb-4">
+            <svg class="w-7 h-7 text-rose" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M14 4 C18 9 18 13 14 17 C10 13 10 9 14 4Z"/><path d="M14 17v7"/></svg>
+            <span class="font-mono text-xs text-mauve">02</span>
+          </div>
+          <h3 data-i18n="proc2_t" class="text-lg font-medium mb-1">Strategi</h3>
+          <p data-i18n="proc2_d" class="copy text-sm text-ink2">Positioning, tujuan, dan rencana.</p>
+          <span class="hidden lg:block absolute top-3.5 right-0 text-rose/40" aria-hidden="true">→</span>
+        </li>
+
+        <li class="reveal relative pr-4" style="transition-delay:.12s">
+          <div class="flex items-center gap-3 mb-4">
+            <svg class="w-7 h-7 text-rose" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="5" y="5" width="18" height="18" rx="4"/><path d="M10 14l3 3 5-6"/></svg>
+            <span class="font-mono text-xs text-mauve">03</span>
+          </div>
+          <h3 data-i18n="proc3_t" class="text-lg font-medium mb-1">Bangun</h3>
+          <p data-i18n="proc3_d" class="copy text-sm text-ink2">Produk &amp; aset dibangun bersama tim.</p>
+          <span class="hidden lg:block absolute top-3.5 right-0 text-rose/40" aria-hidden="true">→</span>
+        </li>
+
+        <li class="reveal relative pr-4" style="transition-delay:.18s">
+          <div class="flex items-center gap-3 mb-4">
+            <svg class="w-7 h-7 text-rose" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M14 4c5 3 7 8 5 14l-5 4-5-4c-2-6 0-11 5-14Z"/><circle cx="14" cy="12" r="2.2"/></svg>
+            <span class="font-mono text-xs text-mauve">04</span>
+          </div>
+          <h3 data-i18n="proc4_t" class="text-lg font-medium mb-1">Luncurkan</h3>
+          <p data-i18n="proc4_d" class="copy text-sm text-ink2">Go-to-market &amp; kampanye perdana.</p>
+          <span class="hidden lg:block absolute top-3.5 right-0 text-rose/40" aria-hidden="true">→</span>
+        </li>
+
+        <li class="reveal relative" style="transition-delay:.24s">
+          <div class="flex items-center gap-3 mb-4">
+            <svg class="w-7 h-7 text-rose" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 19c4-1 6-4 7-8M22 9c-1 4-4 6-8 7"/><path d="M19 6h3v3M9 22H6v-3"/></svg>
+            <span class="font-mono text-xs text-mauve">05</span>
+          </div>
+          <h3 data-i18n="proc5_t" class="text-lg font-medium mb-1">Optimasi</h3>
+          <p data-i18n="proc5_d" class="copy text-sm text-ink2">Ukur, iterasi, dan tumbuhkan.</p>
+        </li>
+
+      </ol>
+    </section>
+
+    <!-- ============ 04 — SKILLS ============ -->
+    <section id="keahlian" class="max-w-6xl mx-auto px-6 md:px-8 py-16 md:py-24" aria-labelledby="skill-label">
+      <p id="skill-label" data-i18n="s4_label" class="font-mono t-label text-rose uppercase mb-10 md:mb-12 reveal">04 — KEAHLIAN &amp; TOOLS</p>
+      <div class="grid md:grid-cols-3 gap-8 md:gap-10">
+
+        <div class="reveal">
+          <h3 data-i18n="sk_build" class="font-mono text-xs tracking-[0.2em] uppercase text-mauve2 mb-5">BUILD</h3>
+          <ul class="flex flex-wrap gap-2.5">
+            <li data-i18n="sk_b1" class="font-mono text-xs px-3.5 py-2 rounded-full bg-blush border hairline">IT / Informatika</li>
+            <li data-i18n="sk_b2" class="font-mono text-xs px-3.5 py-2 rounded-full bg-blush border hairline">Project Management</li>
+            <li data-i18n="sk_b3" class="font-mono text-xs px-3.5 py-2 rounded-full bg-blush border hairline">Product</li>
+          </ul>
+        </div>
+
+        <div class="reveal" style="transition-delay:.08s">
+          <h3 data-i18n="sk_market" class="font-mono text-xs tracking-[0.2em] uppercase text-mauve2 mb-5">MARKET</h3>
+          <ul class="flex flex-wrap gap-2.5">
+            <li class="font-mono text-xs px-3.5 py-2 rounded-full bg-blush border hairline">Meta / Google Ads</li>
+            <li class="font-mono text-xs px-3.5 py-2 rounded-full bg-blush border hairline">GA4</li>
+            <li data-i18n="sk_m3" class="font-mono text-xs px-3.5 py-2 rounded-full bg-blush border hairline">Content &amp; Social</li>
+          </ul>
+        </div>
+
+        <div class="reveal" style="transition-delay:.16s">
+          <h3 data-i18n="sk_creative" class="font-mono text-xs tracking-[0.2em] uppercase text-mauve2 mb-5">CREATIVE / RESEARCH</h3>
+          <ul class="flex flex-wrap gap-2.5">
+            <li data-i18n="sk_c1" class="font-mono text-xs px-3.5 py-2 rounded-full bg-blush border hairline">AI × human creative</li>
+          </ul>
+          <p data-i18n="sk_paper" class="copy text-sm text-mauve2 mt-4">Co-author, “AI &amp; kreativitas manusia” — Jurnal Sosioteknologi, 2020.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ 05 — JOURNEY ============ -->
+    <section id="perjalanan" class="max-w-6xl mx-auto px-6 md:px-8 py-16 md:py-24" aria-labelledby="jour-label">
+      <p id="jour-label" data-i18n="s5_label" class="font-mono t-label text-rose uppercase mb-10 md:mb-12 reveal">05 — PERJALANAN</p>
+      <ol class="relative border-l hairline ml-2 space-y-9 md:space-y-10">
+
+        <li class="reveal relative pl-7 md:pl-9">
+          <span class="absolute -left-[6.5px] top-2 w-3 h-3 rounded-full bg-rose ring-4 ring-paper" aria-hidden="true"></span>
+          <p class="font-mono text-xs text-mauve mb-1.5">UISI · Informatika</p>
+          <p data-i18n="j1" class="copy text-ink2">Fondasi teknis: ngoding, produk, dan pola pikir membangun.</p>
+        </li>
+
+        <li class="reveal relative pl-7 md:pl-9" style="transition-delay:.06s">
+          <span class="absolute -left-[6.5px] top-2 w-3 h-3 rounded-full bg-rose ring-4 ring-paper" aria-hidden="true"></span>
+          <p class="font-mono text-xs text-mauve mb-1.5">CEO · BelumNemu</p>
+          <p data-i18n="j2" class="copy text-ink2">Memimpin startup &amp; tim produk sebagai co-founder.</p>
+        </li>
+
+        <li class="reveal relative pl-7 md:pl-9" style="transition-delay:.12s">
+          <span class="absolute -left-[6.5px] top-2 w-3 h-3 rounded-full bg-rose ring-4 ring-paper" aria-hidden="true"></span>
+          <p class="font-mono text-xs text-mauve mb-1.5">Canbeauty · Marketing Manager</p>
+          <p data-i18n="j3" class="copy text-ink2">Beralih ke marketing: brand &amp; pertumbuhan di sektor beauty.</p>
+        </li>
+
+        <li class="reveal relative pl-7 md:pl-9" style="transition-delay:.18s">
+          <span class="absolute -left-[6.5px] top-2 w-3 h-3 rounded-full bg-rose ring-4 ring-paper" aria-hidden="true"></span>
+          <p class="font-mono text-xs text-mauve mb-1.5">Albata · Digital Marketing</p>
+          <p data-i18n="j4" class="copy text-ink2">Performance marketing yang berbasis data.</p>
+        </li>
+
+      </ol>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER / CONTACT ============ -->
+  <footer id="kontak" class="relative z-10 mt-8 md:mt-12 bg-ink text-paper overflow-hidden">
+    <svg class="driftB absolute -bottom-10 -right-10 w-80 h-80 text-rose2 pointer-events-none select-none" style="opacity:0.14" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.1" fill="none">
+        <path d="M100 40 C118 56 118 84 100 100 C82 84 82 56 100 40Z"/>
+        <path d="M160 100 C144 118 116 118 100 100 C116 82 144 82 160 100Z"/>
+        <path d="M100 160 C82 144 82 116 100 100 C118 116 118 144 100 160Z"/>
+        <path d="M40 100 C56 82 84 82 100 100 C84 118 56 118 40 100Z"/>
+      </g>
+      <circle cx="100" cy="100" r="6" fill="currentColor"/>
+    </svg>
+
+    <div class="relative max-w-6xl mx-auto px-6 md:px-8 py-20 md:py-28">
+      <h2 data-i18n="cta_headline" class="t-h2 font-light max-w-[20ch] mb-8 reveal">Punya produk atau brand yang ingin bertumbuh? Mari bekerja sama.</h2>
+
+      <p data-i18n="philosophy" class="italic font-serif text-rose2 text-lg md:text-xl max-w-[42ch] mb-12 reveal" style="transition-delay:.06s">“It's not about the title but how you uphold a responsibility.”</p>
+
+      <div class="flex flex-wrap items-center gap-x-7 gap-y-4 mb-16 reveal" style="transition-delay:.12s">
+        <a data-i18n="nav_cta" href="mailto:EMAIL_TBD" class="font-mono text-sm tracking-wide bg-rose text-paper px-7 py-3.5 rounded-full hover:bg-paper hover:text-ink transition-colors duration-200 cursor-pointer">Kerja Sama</a>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-6 border-t border-paper/15 pt-8 font-mono text-sm">
+        <a href="mailto:EMAIL_TBD" class="text-paper/70 hover:text-rose2 transition-colors duration-200 inline-flex items-center gap-2">
+          <span class="text-mauve2">Email</span>
+          <span>EMAIL_TBD</span>
+        </a>
+        <a href="#" class="text-paper/70 hover:text-rose2 transition-colors duration-200 inline-flex items-center gap-2" aria-label="Instagram (handle to be confirmed)">
+          <span class="text-mauve2">Instagram</span>
+          <span>@HANDLE_TBD</span>
+        </a>
+        <a href="https://www.linkedin.com/in/putu-alicia-sarah-sativa-tanaya-4744401a9/" target="_blank" rel="noopener" class="text-paper/70 hover:text-rose2 transition-colors duration-200 inline-flex items-center gap-2">
+          <span class="text-mauve2">LinkedIn</span>
+          <span data-i18n="link_profil">↗ Profil</span>
+        </a>
+      </div>
+
+      <p class="font-mono text-xs text-paper/40 mt-14">© <span id="year">2026</span> Putu Alicia Sarah Sativa Tanaya · Caca</p>
+    </div>
+  </footer>
+
+  <!-- ============ SCRIPT ============ -->
+  <script>
+    (function () {
+      'use strict';
+
+      // ---------- i18n ----------
+      var I18N = {
+        id: {
+          nav_cta: 'Kerja Sama',
+          hero_eyebrow: 'PRODUCT · PROJECT · BRAND · GROWTH',
+          hero_title_a: 'Membangun produk —',
+          hero_title_em: 'dan brand yang menjualnya.',
+          hero_sub: 'Dari IT & startup ke performance marketing. Saya pimpin proyek dari ide sampai bertumbuh — paham produknya, paham angkanya.',
+          m1: 'GEMASTIK 10 (tim)', m2: 'STARTUP BELUMNEMU', m3: 'MAWAPRES UISI 2019',
+
+          s1_label: '01 — YANG SAYA BAWA',
+          p1_desc: 'Startup: tag scan untuk barang hilang. Memimpin tim produk (co-founder).',
+          p1_detail: 'Tim: Fitri Kharismawati (PM), Zeni Maliha (Designer).',
+          p2_badge: 'Juara 1 · tim',
+          p2_desc: 'Idea Rush + Best Poster. Repotizen (IoT). Tim Aphrodite.',
+          p2_detail: 'Hadiah tim Rp 13 jt · UI 2017.',
+          p3_badge: 'personal',
+          p3_desc: 'Top 5 Mawapres UISI 2019 · Runner-up 2 Pilmapres Kopertis VII.',
+          p3_detail: 'Penghargaan individu.',
+          p4_desc: 'Marketing Mgr → Digital Marketing. Beauty & edukasi.',
+          p4_detail: 'Performance marketing untuk produk konsumen.',
+
+          s2_label: '02 — LAYANAN',
+          svc1_t: 'Product / PM', svc1_d: 'Ide → produk → kelola tim & roadmap.',
+          svc2_t: 'Brand Strategy', svc2_d: 'Positioning, identity, messaging.',
+          svc3_t: 'Performance / Paid Ads', svc3_d: 'Paid social/search, optimasi ROAS.',
+          svc4_t: 'Content & Data', svc4_d: 'Konten, social, analytics & insight.',
+
+          s3_label: '03 — CARA SAYA BEKERJA',
+          proc1_t: 'Riset', proc1_d: 'Pahami masalah, pasar, dan pengguna.',
+          proc2_t: 'Strategi', proc2_d: 'Positioning, tujuan, dan rencana.',
+          proc3_t: 'Bangun', proc3_d: 'Produk & aset dibangun bersama tim.',
+          proc4_t: 'Luncurkan', proc4_d: 'Go-to-market & kampanye perdana.',
+          proc5_t: 'Optimasi', proc5_d: 'Ukur, iterasi, dan tumbuhkan.',
+
+          s4_label: '04 — KEAHLIAN & TOOLS',
+          sk_build: 'BUILD', sk_b1: 'IT / Informatika', sk_b2: 'Project Management', sk_b3: 'Product',
+          sk_market: 'MARKET', sk_m3: 'Content & Social',
+          sk_creative: 'CREATIVE / RESEARCH', sk_c1: 'AI × human creative',
+          sk_paper: 'Co-author, “AI & kreativitas manusia” — Jurnal Sosioteknologi, 2020.',
+
+          s5_label: '05 — PERJALANAN',
+          j1: 'Fondasi teknis: ngoding, produk, dan pola pikir membangun.',
+          j2: 'Memimpin startup & tim produk sebagai co-founder.',
+          j3: 'Beralih ke marketing: brand & pertumbuhan di sektor beauty.',
+          j4: 'Performance marketing yang berbasis data.',
+
+          cta_headline: 'Punya produk atau brand yang ingin bertumbuh? Mari bekerja sama.',
+          philosophy: '“It\'s not about the title but how you uphold a responsibility.”',
+          link_profil: '↗ Profil'
+        },
+        en: {
+          nav_cta: 'Work With Me',
+          hero_eyebrow: 'PRODUCT · PROJECT · BRAND · GROWTH',
+          hero_title_a: 'I build products —',
+          hero_title_em: 'and the brands that sell them.',
+          hero_sub: 'From IT & startups to performance marketing. I lead projects from idea to growth — I understand the product and the numbers.',
+          m1: 'GEMASTIK 10 (team)', m2: 'STARTUP BELUMNEMU', m3: 'TOP STUDENT UISI 2019',
+
+          s1_label: '01 — WHAT I BRING',
+          p1_desc: 'Startup: scan tags for lost items. Led the product team (co-founder).',
+          p1_detail: 'Team: Fitri Kharismawati (PM), Zeni Maliha (Designer).',
+          p2_badge: '1st · team',
+          p2_desc: 'Idea Rush + Best Poster. Repotizen (IoT). Team Aphrodite.',
+          p2_detail: 'Team prize Rp 13 jt · UI 2017.',
+          p3_badge: 'personal',
+          p3_desc: 'Top 5 Top Student UISI 2019 · 2nd Runner-up Pilmapres Kopertis VII.',
+          p3_detail: 'Individual awards.',
+          p4_desc: 'Marketing Mgr → Digital Marketing. Beauty & education.',
+          p4_detail: 'Performance marketing for consumer products.',
+
+          s2_label: '02 — SERVICES',
+          svc1_t: 'Product / PM', svc1_d: 'Idea → product → lead team & roadmap.',
+          svc2_t: 'Brand Strategy', svc2_d: 'Positioning, identity, messaging.',
+          svc3_t: 'Performance / Paid Ads', svc3_d: 'Paid social/search, ROAS optimization.',
+          svc4_t: 'Content & Data', svc4_d: 'Content, social, analytics & insight.',
+
+          s3_label: '03 — HOW I WORK',
+          proc1_t: 'Discover', proc1_d: 'Understand the problem, market, and users.',
+          proc2_t: 'Strategy', proc2_d: 'Positioning, goals, and a plan.',
+          proc3_t: 'Build', proc3_d: 'Product & assets built with the team.',
+          proc4_t: 'Launch', proc4_d: 'Go-to-market & first campaigns.',
+          proc5_t: 'Optimize', proc5_d: 'Measure, iterate, and grow.',
+
+          s4_label: '04 — SKILLS & TOOLS',
+          sk_build: 'BUILD', sk_b1: 'IT / Computer Science', sk_b2: 'Project Management', sk_b3: 'Product',
+          sk_market: 'MARKET', sk_m3: 'Content & Social',
+          sk_creative: 'CREATIVE / RESEARCH', sk_c1: 'AI × human creative',
+          sk_paper: 'Co-author, “AI & human creativity” — Jurnal Sosioteknologi, 2020.',
+
+          s5_label: '05 — JOURNEY',
+          j1: 'Technical foundation: coding, product, and a builder\'s mindset.',
+          j2: 'Led a startup & product team as co-founder.',
+          j3: 'Moved into marketing: brand & growth in the beauty sector.',
+          j4: 'Data-driven performance marketing.',
+
+          cta_headline: 'Have a product or brand you want to grow? Let\'s work together.',
+          philosophy: '“It\'s not about the title but how you uphold a responsibility.”',
+          link_profil: '↗ Profile'
+        }
+      };
+
+      function applyLang(lang) {
+        if (!I18N[lang]) lang = 'id';
+        var dict = I18N[lang];
+        document.documentElement.lang = lang;
+        document.querySelectorAll('[data-i18n]').forEach(function (el) {
+          var key = el.getAttribute('data-i18n');
+          if (dict[key] != null) el.textContent = dict[key];
+        });
+        try { localStorage.setItem('putu_lang', lang); } catch (e) {}
+        document.querySelectorAll('[data-lang-btn]').forEach(function (btn) {
+          var active = btn.getAttribute('data-lang-btn') === lang;
+          btn.style.fontWeight = active ? '600' : '400';
+          btn.style.color = active ? '#C9607A' : '';
+          btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+      }
+
+      // ---------- count-up ----------
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function runCountUp(el) {
+        if (el.dataset.done) return;
+        el.dataset.done = '1';
+        var target = parseFloat(el.getAttribute('data-countup')) || 0;
+        var prefix = el.getAttribute('data-prefix') || '';
+        var suffix = el.getAttribute('data-suffix') || '';
+        function render(v) { el.textContent = prefix + Math.round(v).toLocaleString('id-ID') + suffix; }
+        if (prefersReduced) { render(target); return; }
+        var dur = 1100, start = null;
+        function step(ts) {
+          if (start === null) start = ts;
+          var p = Math.min((ts - start) / dur, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          render(target * eased);
+          if (p < 1) requestAnimationFrame(step);
+          else render(target);
+        }
+        requestAnimationFrame(step);
+      }
+
+      // ---------- init ----------
+      function init() {
+        var saved = 'id';
+        try { saved = localStorage.getItem('putu_lang') || 'id'; } catch (e) {}
+        applyLang(saved);
+
+        document.querySelectorAll('[data-lang-btn]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            applyLang(btn.getAttribute('data-lang-btn'));
+          });
+        });
+
+        var y = document.getElementById('year');
+        if (y) y.textContent = new Date().getFullYear();
+
+        var reveals = document.querySelectorAll('.reveal');
+        var counts = document.querySelectorAll('[data-countup]');
+
+        if (prefersReduced || !('IntersectionObserver' in window)) {
+          reveals.forEach(function (el) { el.classList.add('in'); });
+          counts.forEach(function (el) { runCountUp(el); });
+          return;
+        }
+
+        var revObs = new IntersectionObserver(function (entries, obs) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+        reveals.forEach(function (el) { revObs.observe(el); });
+
+        var cntObs = new IntersectionObserver(function (entries, obs) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { runCountUp(e.target); obs.unobserve(e.target); }
+          });
+        }, { threshold: 0.5 });
+        counts.forEach(function (el) { cntObs.observe(el); });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+</body>
+</html>
