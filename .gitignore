@@ -5,3 +5,5 @@ r-*.png
 shot-*.png
 *-sm-tmp.png
 .playwright-mcp/
+assets/*.orig.jpg
+shot-*.jpeg
