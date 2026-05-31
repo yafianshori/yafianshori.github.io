@@ -35,7 +35,7 @@ Setiap `git push` ke `main` otomatis memperbarui situs dalam ~1–2 menit.
 - Ganti foto: timpa file di `assets/` dengan nama sama, atau ubah `src` di `index.html`.
 
 ## Catatan
-- Gaya: Editorial Swiss — grid 12 kolom, Playfair Display × Inter × JetBrains Mono, palet ink + aksen amber.
+- Gaya: Stripe-inspired — gradient aurora mesh, latar terang, aksen indigo (#533afd), Inter 300 (thin) + negative tracking, tabular figures untuk angka.
 - Tailwind via CDN (cukup untuk situs statis pribadi).
 - Animasi hero mati otomatis bila pengguna mengaktifkan *reduce motion*.
 - Semua penghargaan dibingkai sebagai pencapaian produk, bukan klaim pribadi.
