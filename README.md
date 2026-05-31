@@ -25,6 +25,10 @@ Semua teks ada di dalam `index.html`:
 
 **Netlify / Vercel** — drag-drop folder ini, atau connect repo. Tidak perlu build command.
 
+## Live
+🔗 **https://yafianshori.github.io/** — di-deploy via GitHub Pages (branch `main`, root).
+Setiap `git push` ke `main` otomatis memperbarui situs dalam ~1–2 menit.
+
 ## Aset gambar (folder `assets/`)
 - `yafi.jpg` — foto profil (About). `yafi-duo.jpg` — foto duotone amber (hero). `yafi-sm.jpg` — cadangan kecil.
 - `m-truck.jpg`, `m-logistics.jpg`, `m-warehouse.jpg` — foto mood logistik (duotone). Sumber: Unsplash (lisensi bebas).
